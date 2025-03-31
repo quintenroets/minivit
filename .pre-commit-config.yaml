@@ -38,12 +38,6 @@ repos:
         pass_filenames: false
         always_run: true
         fail_fast: true
-  - repo: https://github.com/quintenroets/package-dev-tools
-    rev: v0.6.9
-    hooks:
-      - id: check-coverage
-      - id: check-shields
-      - id: check-version
 
 ci:
     autofix_commit_msg: auto fixes from pre-commit hooks
