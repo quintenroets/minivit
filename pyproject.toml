@@ -1,5 +1,5 @@
 [project]
-name = "python-package-qtemplate"
+name = "minivit"
 version = "0.1.0"
 description = "Template for Python package published on PyPI"
 authors = [{name = "Quinten Roets", email = "qdr2104@columbia.edu"}]
@@ -18,10 +18,10 @@ dev = [
 ]
 
 [project.urls]
-"Source Code" = "https://github.com/quintenroets/python-package-template"
+"Source Code" = "https://github.com/quintenroets/minivit"
 
 [project.scripts]
-python-package-template = "python_package_template.cli:entry_point"
+minivit = "minivit.cli:entry_point"
 
 [build-system]
 requires = ["setuptools"]
@@ -63,4 +63,4 @@ ignore = [
 ]
 
 [tool.setuptools.package-data]
-python_package_template = ["py.typed"]
+minivit = ["py.typed"]

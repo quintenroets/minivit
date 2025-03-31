@@ -1,6 +1,6 @@
 import cli
 
-from python_package_template.context import context
+from minivit.context import context
 
 
 def main() -> None:
