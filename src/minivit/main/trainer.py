@@ -21,7 +21,7 @@ class TrainerModule(pl.LightningModule):
         }
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
-        return cast(torch.Tensor, self.model(x))
+        return cast("torch.Tensor", self.model(x))
 
     def training_step(
         self,
@@ -48,7 +48,7 @@ class TrainerModule(pl.LightningModule):
         accuracy = self.accuracies[stage](logits, y)
         self.log(f"{stage}_loss", loss)
         self.log(f"{stage}_accuracy", accuracy, prog_bar=True)
-        return cast(torch.Tensor, loss)
+        return cast("torch.Tensor", loss)
 
     def configure_optimizers(self) -> torch.optim.Optimizer:
         return torch.optim.Adam(self.parameters(), lr=self.learning_rate)
