@@ -48,7 +48,7 @@ class PatchEmbedder(nn.Module):
         class_token = self.class_token.expand(batch_size, -1, -1)
         tokens = torch.cat((class_token, flattened_patches), dim=1)
         tokens = tokens + self.positional_embeddings
-        return cast(torch.Tensor, self.normalization(tokens))
+        return cast("torch.Tensor", self.normalization(tokens))
 
 
 class SelfAttentionBlock(nn.Module):
@@ -65,7 +65,7 @@ class SelfAttentionBlock(nn.Module):
         normalized_x = self.normalization(x)
         attention_inputs = normalized_x, normalized_x, normalized_x  # self-attention
         attention_outputs, _ = self.attention(*attention_inputs)
-        return cast(torch.Tensor, self.normalization(attention_outputs))
+        return cast("torch.Tensor", self.normalization(attention_outputs))
 
 
 class MLPBlock(nn.Module):
@@ -80,7 +80,7 @@ class MLPBlock(nn.Module):
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
         output = self.layers(x)
-        return cast(torch.Tensor, self.normalization(output))
+        return cast("torch.Tensor", self.normalization(output))
 
 
 class TransformerBlock(nn.Module):
@@ -94,7 +94,7 @@ class TransformerBlock(nn.Module):
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
         x = x + self.attention(x)
-        return cast(torch.Tensor, x + self.mlp(x))
+        return cast("torch.Tensor", x + self.mlp(x))
 
 
 class TransformerEncoder(nn.Module):
@@ -113,7 +113,7 @@ class TransformerEncoder(nn.Module):
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
         tokens = self.patch_embedder(x)
-        return cast(torch.Tensor, tokens + self.blocks(tokens))
+        return cast("torch.Tensor", tokens + self.blocks(tokens))
 
 
 class TransformerClassifier(nn.Module):
@@ -128,4 +128,4 @@ class TransformerClassifier(nn.Module):
     def forward(self, x: torch.Tensor) -> torch.Tensor:
         encodings = self.encoder(x)
         encoding = encodings[:, 0]  # Take CLS token
-        return cast(torch.Tensor, self.classification_head(encoding))
+        return cast("torch.Tensor", self.classification_head(encoding))
