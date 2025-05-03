@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from dataclasses import dataclass, field
 
 
@@ -36,3 +37,5 @@ class Config:
     max_epochs: int = 5
     learning_rate: float = 1e-3
     architecture: ArchitectureConfig = field(default_factory=ArchitectureConfig)
+=======
+>>>>>>> template

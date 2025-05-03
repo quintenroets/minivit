@@ -3,7 +3,9 @@ from functools import cached_property
 import torch
 from package_utils.context import Context as Context_
 
-from minivit.models import Config, Options, Secrets
+from .config import Config
+from .options import Options
+from .secrets_ import Secrets
 
 
 class Context(Context_[Options, Config, Secrets]):
