@@ -3,7 +3,7 @@ from typing import cast
 import torch
 from torch import nn
 
-from minivit.models.config import (
+from minivit.context.config import (
     ArchitectureConfig,
     AttentionConfig,
     PatchEmbedderConfig,
