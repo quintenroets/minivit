@@ -19,4 +19,10 @@
 - id: run-tests
   entry: coverage run
   fail_fast: true
+<<<<<<< HEAD
+=======
+- entry: check-coverage
+- entry: check-shields
+- entry: check-version
+>>>>>>> template
 - entry: check-import
