@@ -8,13 +8,9 @@ readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
     "package-utils[context] >=0.8.3, <1",
-<<<<<<< HEAD
     "pytorch-lightning >= 2.5.1, <3",
-    "powercli >=0.3.8, <1",
-    "torchvision >= 0.21.0",
-=======
     "powercli >=0.4.0, <1",
->>>>>>> template
+    "torchvision >= 0.21.0",
 ]
 
 [project.optional-dependencies]
